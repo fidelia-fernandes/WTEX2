@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Portal</title>
+  <style>
+    form div {
+      margin-bottom: 16px; /* Space between div elements */
+    }
+    form fieldset {
+      margin-bottom: 24px; /* Space between fieldsets */
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <h1>Job Application Portal</h1>
+
+    <form action="/serverlogic" method="post" enctype="multipart/form-data">
+
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <div>
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name" autofocus maxlength="100">
+        </div>
+
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="example@domain.com">
+        </div>
+
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required minlength="6" maxlength="20">
+        </div>
+
+        <div>
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="10-digit phone number">
+        </div>
+
+        <div>
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div>
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" required min="18" max="60">
+        </div>
+
+        <div>
+          <label for="portfolio">Portfolio URL:</label>
+          <input type="url" id="portfolio" name="portfolio" required placeholder="https://yourportfolio.com">
+        </div>
+
+        <div>
+          <label for="searchjob">Search Job:</label>
+          <input type="search" id="searchjob" name="searchjob" placeholder="Search job roles" required>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Job Preferences</legend>
+
+        <div>
+          <label for="position">Position Applied For:</label>
+          <select id="position" name="position" required>
+            <option value="">-- Select a position --</option>
+            <option value="frontend">Frontend Developer</option>
+            <option value="backend">Backend Developer</option>
+            <option value="fullstack">Full Stack Developer</option>
+            <option value="designer">UI/UX Designer</option>
+            <option value="pm">Project Manager</option>
+          </select>
+        </div>
+
+        <div>
+          <p>Preferred Work Mode:</p>
+          <input type="radio" id="remote" name="workmode" value="remote" required>
+          <label for="remote">Remote</label>
+          <input type="radio" id="onsite" name="workmode" value="onsite">
+          <label for="onsite">Onsite</label>
+        </div>
+
+        <div>
+          <p>Skills:</p>
+          <input type="checkbox" id="html" name="skills[]" value="HTML">
+          <label for="html">HTML</label>
+          <input type="checkbox" id="css" name="skills[]" value="CSS">
+          <label for="css">CSS</label>
+          <input type="checkbox" id="js" name="skills[]" value="JavaScript">
+          <label for="js">JavaScript</label>
+          <input type="checkbox" id="python" name="skills[]" value="Python">
+          <label for="python">Python</label>
+        </div>
+
+        <div>
+          <label for="resume">Upload Resume:</label>
+          <input type="file" id="resume" name="resume" required accept=".pdf,.doc,.docx">
+        </div>
+
+        <div>
+          <label for="about">Why should we hire you?</label>
+          <textarea id="about" name="about" required placeholder="Describe your strengths and experience..." rows="5" cols="50"></textarea>
+        </div>
+
+        <div>
+          <label for="application-progress">Application Completion Progress:</label>
+          <progress id="application-progress" value="70" max="100">70%</progress>
+        </div>
+
+        <div>
+          <input type="submit" value="Submit Application">
+          <input type="reset" value="Reset Form">
+        </div>
+      </fieldset>
+    </form>
+  </main>
+
+</body>
+</html>
